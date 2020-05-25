@@ -1,0 +1,203 @@
+
+<form  (ngSubmit)="productAdd(form)" #form = "ngForm" >
+  <div class="row">
+    <div class="col-6 mb-3">
+      <label for="productType">Product type <span>*</span></label>
+      <select
+        class="w-100 form-control"
+        id="productType"
+        name="productType"
+        required
+        ngModel
+        #productType="ngModel"
+
+      >
+        <option  value="Bodysuits">Bodysuits</option>
+        <option  value="Dresses">Dresses</option>
+        <option  value="Hoodies & Sweats">Hoodies & Sweats</option>
+        <option  value="Jackets & Coats">Jackets & Coats</option>
+        <option  value="Jeans">Jeans</option>
+        <option  value="Pants & Leggings">Pants & Leggings</option>
+        <option  value="Rompers & Jumpsuits">Rompers & Jumpsuits</option>
+        <option  value="Shirts & Blouses">Shirts & Blouses</option>
+        <option  value="Sweaters & Knits">Sweaters & Knits</option>
+      </select>
+    </div>
+    <div class="col-6 mb-3">
+      <label for="brend">Brand <span>*</span></label>
+      <select
+        class="w-100 form-control"
+        id="brend"
+        name="brend"
+        required
+        ngModel
+        #brend="ngModel"
+
+      >
+        <option  value="Asos">Asos</option>
+        <option  value="Mango">Mango</option>
+        <option  value="River Island">River Island</option>
+        <option  value="Topshop">Topshop</option>
+        <option  value="Zara">Zara</option>
+      </select>
+    </div>
+
+
+    <div class="col-md-6 mb-3">
+      <label for="price">Price <span>*</span></label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        #price="ngModel"
+        ngModel
+        class="form-control "
+        required
+        min="1"
+      >
+    </div>
+
+    <div class="col-md-6 mb-3" class="gender">
+      <h4>Gender <span>*</span></h4>
+      <label *ngFor="let gender of genders">
+        <input 
+          class="option-input radio" 
+          type="radio" 
+          name="gender" 
+          [id]="male"
+          ngModel
+          [value]="gender"
+          required
+          />
+          {{gender}}
+        </label>
+    <!-- <label>
+      <input 
+        class="option-input radio" 
+        type="radio" 
+        name="gender" 
+        id="female"
+        ngModel
+        value="female"
+        required
+        />
+        female
+      </label> -->
+    </div>
+    <div class="col-md-6 mb-3 group"  >
+      <h4>Size <span>*</span></h4> 
+      <div
+        *ngFor="let size of sizes"
+        class="colorContent"
+      >
+        <input
+          [id]="size"
+          class="regular-checkbox"
+          type="radio" 
+          name="size" 
+          id="male"
+          ngModel
+          [value]="size"
+          required 
+        >
+        <label 
+          class="sizecheckbox" 
+          [for]="size"
+        >
+        {{size}}</label> 
+      </div>
+    </div>
+    <div class="col-md-6 mb-3 group"  >
+      <h4>Color <span>*</span></h4> 
+      <div
+      *ngFor="let color of colors"
+      class="colorContent"
+     
+      >
+      <input
+          [id]="color"
+          class="color-checkbox"
+         ngModel
+          name="color"
+          required
+          type="radio"       
+          [value]="color"
+      >
+      <label 
+        id="Color" 
+        [for]="color"
+        [ngStyle]="{'backgroundColor': color}"
+      > 
+      </label> 
+      
+  </div>
+    </div>
+    <div class="col-md-12 mb-3 file" >
+        <h4>Img <span>*</span></h4> 
+      <input 
+        id="file"
+        type="file" 
+        name="img"
+        #img='ngModel'
+        ngModel
+        required
+        accept="image/*"
+        (change)="imgUpload($event.target.files)"
+
+      >
+      <label for="file" >Choose a img…</label>
+    <div  class="productImg">   
+      <img 
+     
+      *ngFor="let item of imageUrl"
+        [(src)]="item" 
+        class="userImg" 
+        alt="" 
+      ></div>
+    </div>
+    
+    <div class="col-6 mb-3">
+      <label for="discount">Discount</label>
+      <input
+        type="number"
+        class="form-control"
+        id="discount"
+        name="discount"
+        ngModel
+        #company="ngModel"
+        min="1"
+        max="100"
+      >
+    </div>
+  
+    <div class="col-6 mb-3">
+      <label for="title">Description Title <span>*</span></label>
+      <input
+        type="text"
+        class="form-control mb-3"
+        id="title"
+        name="title"
+        ngModel
+        #title="ngModel"
+        required
+        maxlength="40"
+      >
+    </div>
+    <div class="col-12 mb-3">
+    <label for="description">Description<span>*</span></label>
+    <textarea 
+    name="description" 
+    id="description" 
+    class="form-control mb-3"
+    ngModel
+    mxnlength="150"
+    required
+    ngModel
+    #descripton="ngModel"
+    ></textarea>
+  </div>
+  </div>
+  <button type = "submit"  class="btn btn-success mt-3" >
+    Save
+  </button>
+</form>

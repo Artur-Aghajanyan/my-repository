@@ -1,0 +1,67 @@
+table{
+    width: 90%;
+    margin: 40px auto;
+}
+.product{
+    width: 400px;
+    height: 200px;
+}
+td > img{
+    width: 100px;
+    float: left;
+    height: 100%;
+    margin-right: 10px;
+}
+td > div > .title{
+    color: black;
+    font-weight: bold;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+td{
+    vertical-align: inherit;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: -webkit-center
+}
+th{
+    font-size: 17px;
+    text-transform: capitalize;
+    text-align: -webkit-center;
+}
+button{
+    cursor: pointer;
+}
+.price{
+    color: #dc0345;
+}
+.shopcat-empty{
+    width: 90%;
+    min-height: 400px;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.shopcat-empty img{
+    width: 219px;
+    height: 207px;
+}
+.shopcat-empty h3{
+    padding-top: 20px;
+    font-size: 28px;
+    line-height: 38px;
+}
+.shopcat-empty h2{
+    font-size: 16px;
+    margin-bottom: 7px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 16px;
+}

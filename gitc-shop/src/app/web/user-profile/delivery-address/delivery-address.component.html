@@ -1,0 +1,276 @@
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area pb-5 ">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30">
+                            <h5>Billing Address</h5>
+                        </div>
+
+                        <form  (submit) = "billingAddress(form)" #form = "ngForm" >
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="first_name">First Name <span>*</span></label><span (click)="edit(nameF)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    id="userName"  
+                                    name="userName" 
+                                    #userName="ngModel"
+                                    [ngModel]="user.userName"
+                                    class="form-control " 
+                                    #nameF
+                                    required
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "userName.invalid && (userName.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "userName.errors.required">
+                                        userName is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="last_name">Last Name <span>*</span></label><span (click)="edit(nameL)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="lastName"  
+                                    required
+                                    [ngModel]="user.lastName"
+                                    name="lastName"
+                                    #lastName="ngModel"
+                                    #nameL
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "lastName.invalid && (lastName.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "lastName.errors.required">
+                                       lastName is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="company">Company Name</label><span (click)="edit(nameCompany)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="company" 
+                                        name="company"
+                                        [ngModel]="user.company"
+                                        #company="ngModel"
+                                        #nameCompany
+                                        readonly
+                                        [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                </div>
+                              <div class="col-12 mb-3">
+                                    <label for="country">Country <span>*</span></label><span (click)="edit(nameCountry)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <select 
+                                    class="w-100 form-control" 
+                                    id="country"
+                                    name="country"
+                                    #nameCountry
+                                    required
+                                    readonly
+                                    [ngModel]="user.country"
+                                    #country="ngModel"
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                        <option 
+                                        *ngFor="let country of countries"
+                                        [value]="country.cioc"
+                                        >{{country.name}}</option>
+                                       
+                                    </select>
+                                    <div 
+                                    *ngIf = "country.invalid && (country.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "country.errors.required">
+                                       country is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="street_address">Address <span>*</span></label><span (click)="edit(nameAddress)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control mb-3" 
+                                    id="street_address" 
+                                    name="address"
+                                    [ngModel]="user.address"
+                                    #address="ngModel"
+                                    required
+                                    #nameAddress
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "address.invalid && (address.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "address.errors.required">
+                                       address is required.
+                                    </span >
+                                </div>
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="street_address">Second Address<span></span></label><span (click)="edit(secAddress)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="street_address2" 
+                                    name="addressTwo"
+                                    [ngModel]="user.addressTwo"
+                                    #secAddress
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="postcode">Postcode <span>*</span></label><span (click)="edit(namePostcode)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="postcode" 
+                                    name="postcode"
+                                    [ngModel]="user.postcode"
+                                    #postcode="ngModel"
+                                    required
+                                    #namePostcode
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "postcode.invalid && (postcode.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "postcode.errors.required">
+                                       postcode is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="city">Town/City <span>*</span></label><span (click)="edit(townCity)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="city" 
+                                    name="city"
+                                    [ngModel]="user.city"
+                                    #city="ngModel"
+                                    required
+                                    #townCity
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "city.invalid && (city.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "city.errors.required">
+                                        city is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="state">Province <span>*</span></label><span (click)="edit(nameProvince)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="text" 
+                                    class="form-control" 
+                                    id="state" 
+                                    name="province"
+                                    [ngModel]="user.province"
+                                    #province="ngModel"
+                                    required
+                                    #nameProvince
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "province.invalid && (province.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "province.errors.required">
+                                        phone is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="phone_number">Phone No <span>*</span></label><span (click)="edit(tel)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="tel" 
+                                    class="form-control" 
+                                    id="phone_number" 
+                                    name="phone"
+                                    [ngModel]="user.phone"
+                                    #phone="ngModel"
+                                    required
+                                    #tel
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "phone.invalid && (phone.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "phone.errors.required">
+                                        phone is required.
+                                    </span >
+                                </div>
+                                </div>
+                                <div class="col-12 mb-4">myPencil
+                                    <label for="email_address">Email Address <span>*</span></label><span (click)="edit(nameEmail)"><i class="fa fa-pencil ml-2 myPencil" aria-hidden="true"></i></span>
+                                    <input 
+                                    type="email" 
+                                    class="form-control" 
+                                    id="email_address" 
+                                    name="email"
+                                    [ngModel]="user.email"
+                                    #email="ngModel"
+                                    required
+                                    #nameEmail
+                                    email
+                                    appUniqueEmail
+                                    readonly
+                                    [ngStyle]="{'border': '1px solid transparent'}"
+                                    >
+                                    <div 
+                                    *ngIf = "email.invalid && ( email.touched || form.submitted)"
+                                    class = "invalid-input"
+                                >
+                                    <span *ngIf = "email.errors.required">
+                                        email is required.
+                                    </span >
+                                    <span *ngIf = "email.errors.email">
+                                        Email must be a valid email address
+                                    </span >
+                                    <span *ngIf = "email.errors.uniqueEmail">
+                                        Email already exists
+                                    </span>
+                                </div>
+                                </div>
+                         
+                            </div>
+                            <button type = "submit"  class="btn btn-success mt-3" [disabled]='!form.valid' >
+                                Save
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- ##### Checkout Area End ##### -->

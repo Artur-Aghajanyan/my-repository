@@ -1,0 +1,27 @@
+<!-- ##### Header Area Start ##### -->
+<app-header
+(basketVisibility)="basketVisibility($event)"
+(product)="products($event)"
+[basketsCounters]="basketsCounter"
+></app-header>
+<!-- ##### Header Area End ##### -->
+
+<!-- ##### Right Side Cart Area ##### -->
+<app-right-side-cart
+[basketVisibility]="basketOpen"
+(basketFalse)="basketFalse($event)"
+[products]='product'
+(basketCounts)="basketCounts($event)"
+></app-right-side-cart>
+<!-- ##### Right Side Cart End ##### -->
+
+<router-outlet
+(activate)='onActivate($event)'
+(deactivate)='onDeactivate($event)'>
+</router-outlet>
+
+
+<!-- ##### Footer Area Start ##### -->
+<app-footer></app-footer>
+<!-- ##### Footer Area End ##### -->
+

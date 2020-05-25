@@ -1,0 +1,82 @@
+section{
+  margin: 50px 0;
+}
+.myCard{
+    width: 90%;
+    margin: 0 auto;
+}
+.myCardBody h2 ,
+.myCardBody h3{
+    font-size: 20px;
+}
+.count{
+    width: 56px;
+    height: 30px;
+    border: 2px solid #ebebeb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.myBody{
+    display: flex;
+    padding: 1.25rem;
+}
+.quantity{
+    margin-right: 20px;
+}
+.myBody h2{
+    font-size: 20px;
+}
+.price{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 20px;
+    color: #dc0345;
+    font-weight: 700;
+}
+.button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+img{
+    height: 100%;
+}
+.delet{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    color: #dc0345;
+    font-size: 20px;
+    padding: 5px;
+}
+.shopcat-empty{
+    width: 90%;
+    min-height: 400px;
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.shopcat-empty img{
+    width: 219px;
+    height: 207px;
+}
+.shopcat-empty h3{
+    padding-top: 20px;
+    font-size: 28px;
+    line-height: 38px;
+}
+.shopcat-empty h2{
+    font-size: 16px;
+    margin-bottom: 7px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 16px;
+}

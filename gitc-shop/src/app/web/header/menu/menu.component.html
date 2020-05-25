@@ -1,0 +1,68 @@
+<nav class="classy-navbar myClassyNavbar" id="essenceNav">
+    <!-- Logo -->
+    <a class="nav-brand"><img src="/assets/img/core-img/logo.png" alt=""></a>
+    <!-- Navbar Toggler -->
+    <div class="classy-navbar-toggler" (click)="menuOpen(menu)">
+        <span class="navbarToggler"><span></span><span></span><span></span></span>
+    </div>
+    <!-- Menu -->
+    <div class="classy-menu " #menu>
+        <!-- close btn -->
+        <div 
+        class="classycloseIcon"
+        (click)="menuOpen(menu)"
+        >
+            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+        </div>
+        <!-- Nav Start -->
+        <div class="classynav">
+            <ul>
+                <li  class="megamenu-item" (click)="menuProduct(shop)"><a>Shop</a>
+                    <div class="megamenu" #shop>
+                        <ul class="single-mega cn-col-4">
+                            <li class="title">Women's Collection</li>
+                            <li><a>Dresses</a></li>
+                            <li><a>Blouses &amp; Shirts</a></li>
+                            <li><a>T-shirts</a></li>
+                            <li><a>Rompers</a></li>
+                            <li><a>Bras &amp; Panties</a></li>
+                        </ul>
+                        <ul class="single-mega cn-col-4">
+                            <li class="title">Men's Collection</li>
+                            <li><a>T-Shirts</a></li>
+                            <li><a>Polo</a></li>
+                            <li><a>Shirts</a></li>
+                            <li><a>Jackets</a></li>
+                            <li><a>Trench</a></li>
+                        </ul>
+                        <ul class="single-mega cn-col-4">
+                            <li class="title">Kid's Collection</li>
+                            <li><a>Dresses</a></li>
+                            <li><a>Shirts</a></li>
+                            <li><a>T-shirts</a></li>
+                            <li><a>Jackets</a></li>
+                            <li><a>Trench</a></li>
+                        </ul>
+                        <div class="single-mega cn-col-4">
+                            <img src="/assets/img/bg-img/bg-6.jpg" alt="">
+                        </div>
+                    </div>
+                    <span class="dd-arrow mydd-arrow"></span>
+                </li>
+                <li class="cn-dropdown-item has-down pr12 megamenu-item" (click)="menuProduct(pages)"><a>Pages</a>
+                    <ul class="dropdown" #pages>
+                        <li><a [routerLink]="['/']"  >Home</a></li>
+                        <li><a [routerLink]="['/shop']">Shop</a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Single Blog</a></li>
+                        <li><a>Regular Page</a></li>
+                        <li><a>Contact</a></li>
+                    </ul>
+                </li>
+                <li><a>Blog</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </div>
+        <!-- Nav End -->
+    </div>
+</nav>

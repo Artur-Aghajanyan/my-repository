@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title  -->
+    <title>Essence - Fashion Ecommerce Template</title>
+    <base href="/">
+    <!-- Favicon  -->
+    <link rel="icon" href="/assets/img/core-img/favicon.ico">
+
+    <!-- Core Style CSS -->
+    <link rel="stylesheet" href="/assets/css/core-style.css">
+    <link rel="stylesheet" href="/assets/style.css">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/bootstrap/css/bootstrap.min.css">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/assets/login/css/util.css">
+    <link rel="stylesheet" type="text/css" href="/assets/login/css/main.css">
+    <!--===============================================================================================-->
+
+</head>
+
+<body>
+  <app-root></app-root>
+<!-- jQuery (Necessary for All JavaScript Plugins) -->
+<!-- <script src="/assets/js/jquery/jquery-2.2.4.min.js"></script> -->
+<script src="/assets/login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!-- Popper js -->
+<script src="/assets/js/popper.min.js"></script>
+<!-- Bootstrap assets -->
+<script src="/assets/js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="/assets/js/plugins.js"></script>
+<!-- Classy Nav js -->
+<script src="/assets/js/classy-nav.min.js"></script>
+<!-- Active js -->
+<script src="/assets/js/active.js"></script>
+
+
+<!--===============================================================================================-->
+
+<!--===============================================================================================-->
+<script src="/assets/login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/login/vendor/bootstrap/js/popper.js"></script>
+<!-- <script src="/assets/login/vendor/bootstrap/js/bootstrap.min.js"></script> -->
+<!--===============================================================================================-->
+<script src="/assets/login/vendor/select2/select2.min.js"></script>
+<script>
+    $(".selection-2").select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#dropDownSelect1')
+    });
+
+
+    jQuery(function ($) {
+
+      $(".sidebar-dropdown > a").click(function() {
+        $(".sidebar-submenu").slideUp(200);
+        if (
+          $(this)
+            .parent()
+            .hasClass("active")
+        ) {
+          $(".sidebar-dropdown").removeClass("active");
+          $(this)
+            .parent()
+            .removeClass("active");
+        } else {
+          $(".sidebar-dropdown").removeClass("active");
+          $(this)
+            .next(".sidebar-submenu")
+            .slideDown(200);
+          $(this)
+            .parent()
+            .addClass("active");
+        }
+      });
+
+      $("#close-sidebar").click(function() {
+        $(".page-wrapper").removeClass("toggled");
+      });
+      $("#show-sidebar").click(function() {
+        $(".page-wrapper").addClass("toggled");
+      });
+
+
+
+
+    });
+
+
+</script>
+<!--===============================================================================================-->
+<script src="/assets/login/vendor/daterangepicker/moment.min.js"></script>
+<script src="/assets/login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="/assets/login/js/main.js"></script>
+
+
+
+
+</body>
+
+</html>

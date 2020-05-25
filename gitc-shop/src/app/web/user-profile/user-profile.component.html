@@ -1,0 +1,54 @@
+ 
+ <!-- ##### Right Side Cart Area ##### -->
+ 
+    <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img myBreadcumb" style="background-image: url(/assets/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 ">
+                    <form #imageForm="ngForm" class="imageUser">
+                            <input 
+                            id="file"
+                            type="file" 
+                            #image 
+                            accept="image/*"
+                            (change)="handleFileInput($event.target.files)"
+                            >
+                            <label for="file" class="file"><i class="fas fa-camera"></i></label>
+                        <img [src]="imageUrl" class="userImg" alt="">
+                        <h1>{{user.userName}}  {{user.lastName}}</h1>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+  
+    <div class="myCheckout">
+            <nav class="navbar myNavbar navbar-expand-lg navbar-light bg-light">
+                    <div class="navbar-collapse mtCollapse" id="navbarTogglerDemo01">
+                      <ul class=" d-flex mr-auto mt-2 mt-lg-0 justify-content-center w-100">
+                        <li class="nav-item myNavItme">
+                          <a class="nav-link"  [routerLink]="['/userprofile/deliveryAddress']" routerLinkActive="active" >Home </a>
+                        <span>/</span></li>
+                        <li class="nav-item myNavItme">
+                          <a class="nav-link" [routerLink]="['/userprofile/orders']"  routerLinkActive="active">Orders</a>
+                          </li> 
+                        
+                      </ul>
+                 
+                    </div>
+                  </nav>
+        <router-outlet></router-outlet>
+    </div>
+    
+    
+    <!-- ##### Checkout Area Start ##### -->
+
+    
+    <!-- ##### Checkout Area End ##### -->
+
+
+

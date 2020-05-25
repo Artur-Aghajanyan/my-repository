@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    margin-top: 85px;
+}
+@media only screen and (max-width: 767px){
+    body {
+        margin-top: 80px;
+    }
+}

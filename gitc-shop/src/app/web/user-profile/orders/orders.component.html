@@ -1,0 +1,52 @@
+<table class="table table-hover" *ngIf="orders.length > 0; else name">
+    <thead  class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">title</th>
+        <th scope="col">price</th>
+        <th scope="col">count</th>
+        <th scope="col">size / color</th>
+        <th scope="col">time</th>
+      </tr>
+    </thead>
+    <tbody class="">
+      <tr  *ngFor="let order of orders let i = index"> 
+        <td>{{i+1}}</td>
+        <td class="product">
+          <img [src]="order.img" alt="">
+          <div>
+            <p class="title">{{order.title}}</p>
+            <p>{{order.description}}</p>
+          </div>
+        </td>
+        <td class="price">
+         <span *ngIf="order.discount">${{(order.price *( order.count*order.discount/100)).toFixed(2)}}</span> 
+         <span *ngIf="order.discount === ''">${{(order.price *order.count).toFixed(2)}}</span> 
+        </td>
+        <td>
+          {{order.count}}
+        </td>
+        <td>
+            {{order.size}} / {{order.color}}
+          </td>
+        <td>
+           <h5>{{order.time |date:'medium'}}</h5> 
+            <button
+            type="button"
+             class="btn btn-danger mt-5"
+            (click)="cancelOrder(order.id)"
+            >Cancel order</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #name>
+      <div class="shopcat-empty">
+          <img src="/assets/img/core-img/shopcart-empty_82472.bf395a89.png" alt="" srcset="">
+          <h3>Your Order is empty</h3>
+          <h2>
+            <a routerLink="/shop" >But it is easy to fix! Go shopping </a> 
+          </h2>
+        </div>
+  </ng-template>
+  

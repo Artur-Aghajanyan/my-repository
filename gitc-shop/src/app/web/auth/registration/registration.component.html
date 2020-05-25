@@ -1,0 +1,152 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form myForm" (ngSubmit)="register(form)"  #form="ngForm" >
+					<span class="login100-form-title p-b-34">
+						Account Login
+					</span>
+
+                <div class="wrap-input100 myWrap rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+                    <input 
+                        id = "userName" 
+                        class = "input100 form-control myInput" 
+                        type = "text" 
+                        #userName = "ngModel" 
+                        name = "userName" 
+                        ngModel
+                        required
+                        minlength = "4"
+                        placeholder = "User name"
+                        [ngClass] = "{'is-invalid' : userName.invalid && ( userName.touched  || form.submitted) ,'valid':!userName.invalid}"
+                    >
+                    <div 
+                        *ngIf = "userName.invalid && ( userName.touched  || form.submitted)"
+                        class = "invalid-input"
+                    >
+                        <span *ngIf = "userName.errors.required">
+                            User Name is required.
+                        </span >
+                        <span *ngIf = "userName.errors.minlength">
+                            User Name must be at least {{userName.errors.minlength.requiredLength}} characters 
+                            now {{userName.errors.minlength.actualLength}}
+                          </span >
+                    </div>
+                    <span 
+                    class = "focus-input100"
+                    [ngClass] = "{'invalidSpan' : userName.invalid && userName.touched}"
+                    ></span>
+                </div>
+                <div class="wrap-input100 myWrap rs1-wrap-input100 validate-input m-b-20" data-validate = "Type user name">
+                <input 
+                    id = "last-name" 
+                    class = "input100 form-control myInput" 
+                    type = "text" 
+                    name = "lastName" 
+                    #lastName = "ngModel"
+                    ngModel
+                    required
+                    minlength = "4"
+                    placeholder = "Last name"
+                    [ngClass] = "{'is-invalid' : lastName.invalid && ( lastName.touched  || form.submitted) ,'valid':!lastName.invalid}"
+                    
+                >
+                <div 
+                    *ngIf = "lastName.invalid && ( lastName.touched  || form.submitted)"
+                    class = "invalid-input"
+                >
+                    <span *ngIf = "lastName.errors.required">
+                        last Name is required.
+                    </span >
+                    <span *ngIf = "lastName.errors.minlength">
+                        last Name must be at least {{lastName.errors.minlength.requiredLength}} characters 
+                        now {{lastName.errors.minlength.actualLength}}
+                    </span >
+                </div>
+                <span 
+                class = "focus-input100"
+                [ngClass] = "{'invalidSpan' : lastName.invalid && lastName.touched}"
+                ></span>
+                </div>
+                <div class="wrap-input100 myWrap rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
+                    <input 
+                        id = "email" 
+                        class = "input100 form-control myInput" 
+                        type = "text" 
+                        name = "email" 
+                        #email = "ngModel"
+                        ngModel
+                        email
+                        required
+                        appUniqueEmail
+                        placeholder = "Email"
+                        [ngClass] = "{'is-invalid' : email.invalid && ( email.touched || form.submitted) ,'valid':!email.invalid}"
+                    >
+                    <div 
+                        *ngIf = "email.invalid && ( email.touched || form.submitted)"
+                        class = "invalid-input"
+                    >
+                        <span *ngIf = "email.errors.required">
+                            email is required.
+                        </span >
+                        <span *ngIf = "email.errors.email">
+                            Email must be a valid email address
+                        </span >
+                        <span *ngIf = "email.errors.uniqueEmail">
+                            Email already exists
+                        </span>
+                    </div>
+                    <span 
+                    class = "focus-input100"
+                    [ngClass] = "{'invalidSpan' : email.invalid && email.touched}"
+                    ></span>
+                </div>
+                <div class = "wrap-input100 myWrap rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
+                    <input 
+                        class = "input100 form-control myInput" 
+                        type = "password" 
+                        name = "password" 
+                        ngModel
+                        required
+                        minlength = "6"
+                        #password = "ngModel"
+                        placeholder = "Password"
+                        [ngClass] = "{'is-invalid' : password.invalid && ( password.touched  || form.submitted) ,'valid':!password.invalid}"
+                    >
+                        <div 
+                        *ngIf="password.invalid && ( password.touched  || form.submitted)"
+                        class="invalid-input"
+                    >
+                        <span *ngIf = "password.errors.required">
+                           password is required.
+                        </span >
+                        <span *ngIf = "password.errors.minlength">
+                            password must be at least {{password.errors.minlength.requiredLength}} characters 
+                            now {{password.errors.minlength.actualLength}}
+                        </span >
+                    </div>
+                    <span 
+                    class = "focus-input100"
+                    [ngClass] = "{'invalidSpan' : password.invalid &&  password.touched }"
+                    ></span>
+                </div>
+
+                <div class = "container-login100-form-btn">
+                    <button type = "submit"  class="login100-form-btn myBtn">
+                        Sign Up
+                    </button>
+                </div>
+                <div class="w-full text-center signIn">
+                    <a routerLink="/login" class="txt3 ">
+                        Sign In
+                    </a>
+                </div>
+            </form>
+
+            <div class="login100-more" style="background-image: url('/assets/login/images/bg-01.jpg');"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="dropDownSelect1"></div>

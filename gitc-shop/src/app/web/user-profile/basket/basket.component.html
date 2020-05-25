@@ -1,0 +1,59 @@
+
+<section *ngIf=" baskets.length > 0; else name">
+    <div *ngFor="let basket of baskets" class="card mb-3 myCard" >
+      <div class="row no-gutters">
+        <div class="col-md-2">
+          <img [src]="basket.img" class="card-img" alt="...">
+        </div>
+        <div class="col-md-5">
+          <div class="card-body myCardBody">
+              <h2  class="card-title">{{basket.brand}}</h2>
+              <h3  class="card-title">{{basket.title}}</h3>
+            <p class="card-text">{{basket.description}}</p>
+            <p class="card-text"><small class="text-muted">Color: {{basket.color}}</small></p>
+            <p class="card-text"><small class="text-muted">Size: {{basket.size}}</small></p>
+          </div>
+        </div>
+        <div class="myBody col-md-5">
+          <div class="d-flex">
+            <div class="quantity">
+              <h2 class="card-title">quantity</h2>
+              <span class="count">{{basket.count}}</span>
+            </div>
+            <div *ngIf="basket.discount" class="quantity">
+                <h2 class="card-title">discount</h2>
+              <span class="price" >-{{basket.discount}}%</span>
+            </div>
+            <div>
+                <h2 class="card-title">price</h2>
+              <span class="price" *ngIf="basket.discount"> ${{(basket.count*(basket.price*basket.discount/100)).toFixed(2)}}</span>
+              <span class="price" *ngIf="basket.discount===''"> ${{(basket.count*basket.price).toFixed(2)}}</span>
+            </div>
+          </div>
+          <div class="button">
+              <button 
+                type="button"
+                class="btn btn-success"
+               (click)="checkout(basket)"
+               >Checkout</button>
+            </div>
+          </div>
+          <span 
+            class="delet"
+            (click)="deletBasket(basket.id)"
+          >
+            <i class="fa fa-close" aria-hidden="true"></i>
+          </span>
+      </div>
+    </div>
+  </section>
+  <ng-template #name>
+    <div class="shopcat-empty">
+      <img src="/assets/img/core-img/shopcart-empty_82472.bf395a89.png" alt="" srcset="">
+      <h3>Your basket is empty</h3>
+      <h2>
+        <a routerLink="/shop" >But it is easy to fix! Go shopping </a> 
+      </h2>
+    </div>
+  </ng-template>
+  

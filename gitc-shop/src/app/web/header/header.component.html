@@ -1,0 +1,29 @@
+<header class="header_area">
+    <div class="classy-nav-container breakpoint-off d-flex align-items-center justify-content-between">
+        <!-- Classy Menu -->
+        <app-menu></app-menu>
+
+        <!-- Header Meta Data -->
+        <div class="header-meta d-flex clearfix justify-content-end">
+            <!-- Search Area -->
+            <app-search></app-search>
+            <!-- Favourite Area -->
+            <div class="favourite-area">
+                <a><img src="/assets/img/core-img/heart.svg" alt=""></a>
+
+            </div>
+            <div class="user-login-info " *ngIf="productLength">
+                <a   (click)="onLogout()" id="essenceCartBtn"><i class="fas fa-sign-out-alt logOut"></i></a>
+            </div>
+            <!-- User Login Info -->
+            <div class="user-login-info">
+                <a  (click)="openPege()"><img src="/assets/img/core-img/user.svg" alt=""></a>
+            </div>
+            <!-- Cart Area -->
+            <div class="cart-area">
+                <a  (click)="openBasket()" id="essenceCartBtn"><img src="/assets/img/core-img/bag.svg" alt=""> <span *ngIf="productLength" >{{products.length}}</span></a>
+            </div>
+        </div>
+
+    </div>
+</header>

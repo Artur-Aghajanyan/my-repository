@@ -1,0 +1,111 @@
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 ">
+            <form 
+                class = "login100-form validate-form myForm" 
+                (ngSubmit) = "login(form)" 
+                #form = "ngForm"
+            >
+                <span class="login100-form-title p-b-34">
+                    Account Login
+                </span>
+                <div 
+                    class = "alert alert-{{message.type}} myAlert" 
+                    *ngIf = "message.text"
+                >
+                    {{message.text}}
+                </div>
+                <div class="wrap-input100 myWrap rs1-wrap-input100 validate-input m-b-20"
+                    data-validate="Type user name">
+                    <input 
+                        id = "email" 
+                        class = "input100 form-control myInput" 
+                        type = "text" 
+                        name = "email" 
+                        #email = "ngModel"
+                        ngModel 
+                        email 
+                        required 
+                        placeholder = "Email"
+                        [ngClass] = "{'is-invalid' : (email.invalid &&  (email.touched || form.submitted)),'valid':!email.invalid}"
+            >
+                    <div 
+                        *ngIf = "email.invalid && ( email.touched || form.submitted)"
+                        class = "invalid-input"
+                    >
+                        <span *ngIf = "email.errors.required">
+                            Email is required.
+                        </span>
+                        <span *ngIf = "email.errors.email">
+                            Email must be a valid email address
+                        </span>
+                    </div>
+                    <span 
+                        class = "focus-input100"
+                        [ngClass] = "{'invalidSpan' : email.invalid &&  email.touched}"
+                    ></span>
+                </div>
+                <div 
+                    class = "wrap-input100 myWrap rs2-wrap-input100 validate-input m-b-20 " 
+                    data-validate = "Type password"
+                >
+                    <input 
+                        class = "input100 form-control myInput" 
+                        type = "password" 
+                        name = "password" 
+                        ngModel 
+                        required
+                        minlength = "6" 
+                        #password = "ngModel" 
+                        placeholder = "Password"
+                        [ngClass] = "{'is-invalid' : password.invalid && ( password.touched  || form.submitted ) ,'valid':!password.invalid}"
+                    >
+                    <div 
+                        *ngIf = "password.invalid && (password.touched  || form.submitted )" 
+                        class = "invalid-input"
+                    >
+                        <span *ngIf = "password.errors.required">
+                            password is required.
+                        </span>
+                        <span *ngIf = "password.errors.minlength">
+                            password must be at least {{password.errors.minlength.requiredLength}} characters long
+                            now {{password.errors.minlength.actualLength}}
+                        </span>
+
+                    </div>
+                    <span 
+                        class = "focus-input100"
+                        [ngClass] = "{'invalidSpan' : password.invalid &&  password.touched }"
+                    >
+                    </span>
+                </div>
+
+                <div class = "container-login100-form-btn">
+                    <button class = "login100-form-btn myBtn">
+                        Sign in
+                    </button>
+                </div>
+
+                <div class = "w-full text-center p-t-27 p-b-239 myTextConter">
+                    <span class = "txt1">
+                        Forgot
+                    </span>
+
+                    <a href="#" class = "txt2">
+                        User name / password?
+                    </a>
+                </div>
+
+                <div class="w-full text-center">
+                    <a routerLink="/registration" class="txt3">
+                        Sign Up
+                    </a>
+                </div>
+            </form>
+
+            <div class="login100-more" style="background-image: url('/assets/login/images/bg-01.jpg');"></div>
+        </div>
+    </div>
+</div>
+
+<div id="dropDownSelect1"></div>
